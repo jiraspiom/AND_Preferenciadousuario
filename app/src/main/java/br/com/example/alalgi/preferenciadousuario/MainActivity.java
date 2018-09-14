@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // o zero significa que esta privado e so o app conseguirar ler o arquivo de preferencia
                 SharedPreferences preferences = getSharedPreferences(ARQUIVO_PREFRENCIA, 0);
                 SharedPreferences.Editor editor = preferences.edit();
 
@@ -37,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
                     String nome = editNome.getText().toString();
+                    editor.putString("nome", nome);
                     editor.commit();
+
+                    textResultado.setText("Olá " + nome);
                 }
 
             }
