@@ -2,6 +2,7 @@ package br.com.example.alalgi.preferenciadousuario;
 
 import android.content.SharedPreferences;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonSalvar = findViewById(R.id.buttonSalvar);
-        editNome = findViewById(R.id.textInputNome);
-        textResultado = findViewById(R.id.textInputNome);
+        editNome = findViewById(R.id.textinputEditNome);
+        textResultado = findViewById(R.id.textViewResultado);
 
         buttonSalvar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("nome", nome);
                     editor.commit();
 
-                    textResultado.setText("Olá " + nome);
+                    textResultado.setText("Olá, " + nome);
                 }
 
             }
