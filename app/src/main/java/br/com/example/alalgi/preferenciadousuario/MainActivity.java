@@ -49,5 +49,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        SharedPreferences preferences = getSharedPreferences(ARQUIVO_PREFRENCIA, 0);
+
+        if(preferences.contains("nome")){
+            String nome =preferences.getString("nome", "usuario não definido");
+            textResultado.setText("Olá, " +  nome);
+
+        }else{
+            textResultado.setText("Olá, usuario não definido");
+        }
+
     }
 }
